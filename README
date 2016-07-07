@@ -1,0 +1,100 @@
+                                   
+Hand
+
+
+Overview
+--------
+
+  Hand is a tool for starting applications by hand.  It can be used
+in a network-enabled mode, in which a common daemon is used to spawn
+and reap children, or can be used in standalone mode for security
+conscious users.
+
+
+Description
+-----------
+
+  A cursory examination of the applications common on many Unix systems
+will reveal a plethora of applications and utilities which must be started
+by hand: the man pages for exmh, ftp, and infocmp, among many others,
+all make reference to the hand daemon.  Unfortunately, this daemon is
+not widely distributed, and has not heretofore been available on any
+free Unix or Unix-like operating systems.
+
+  With the release of this package, users of free operating systems will
+have access to a full source hand daemon, which can be used to easily
+start wide variety of stand-along applications, background tasks, and
+X-Window software packages.
+
+
+Modes of Operation
+------------------
+
+  The hand daemon can be used in either networked, or secure mode.
+In network mode, the hand client utilizes a background hand daemon
+to facilitate task execution.  When the client starts it will make
+contact with the running daemon, pass to it the full list of arguments,
+and allow the daemon to actually start the application.  By using a
+central daemon in this fashion, system overhead and process space can be
+conserved.
+
+  If there is no hand daemon running at the time of client execution,
+the client will seamlessly spawn off a daemon in the background.  This
+daemon will be used to service that client's request, and will also be
+available for other hand users.
+
+  In security conscious environments, users may not wish this background
+daemon to be used to service requests.  Users may feel the inter-process
+communication channels have been compromised, or that the hand daemon
+itself has been co-opted by a malicious party.  In this situation, the
+hand client can be run in secure (-s) mode: it will not contact the
+hand daemon, and will instead service the user's request and then exit.
+While this present a higher system load, due to multiple client instances
+starting applications individually, the resulting security may be of
+sufficient attraction to over-ride this concern.
+
+
+Usage
+-----
+
+hand [-d] [-v <#>] [-p <#>] [-F <cfg>] [-L <log>] [-s] [-b] -- <program> <args>
+
+where:
+        -d : enables debug mode
+        -v : sets the verbosity level to <vl>
+        -p : sets the port to <port>
+        -F : uses <config> as the configuration file
+        -L : uses <log> as the log file
+        -s : runs client in secure (standalone) mode
+        -b : start in background (internal use)
+
+
+Availability
+------------
+
+  The hand home page is at:
+
+    http://www.playground.net/~brad/hand/
+
+
+  The hand source code, available for Linux and other open Unix
+systems, is available at:
+
+    http://www.playground.net/~brad/hand/hand-1.03b.tgz
+
+
+
+Feedback
+--------
+
+  We are always interested in receiving feedback from anyone who uses
+this, including bug
+reports.  If you have any patches, source improvements, or security
+fixes, please let us know at the addresses below.  Thanks!
+
+
+Brad Black
+brad@playground.net
+
+Denis McLaughlin
+denism@cyberus.ca

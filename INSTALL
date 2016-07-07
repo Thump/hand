@@ -1,0 +1,28 @@
+
+Compiling
+---------
+
+  Just untar the sources and type make!
+
+
+Testing
+-------
+
+  The hand daemon can be tested without installation by executing as:
+
+  ./hand <command>
+
+where <command> is the name of the command you want to start by hand.
+
+
+Installing
+----------
+
+  The Makefile contains the $(BASE) variable, which controls the
+install directory.  Set this as appropriate, and then type 'make install'.
+
+
+Uninstalling
+------------
+
+  The package can be uninstalled with 'make uninstall'.

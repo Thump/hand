@@ -1,0 +1,29 @@
+
+Hand Changes File
+
+---------------------------------------------------------------------------
+
+version 0.1
+
+  April 02, 1998
+  Brad Black
+  v0.03
+   - Initial implementation design.
+
+  September 13, 1998
+  Brad Black
+  v1.01
+   - security flaws reviewed
+   - security fixes implemented: standalone version, and encrypted
+     client server protocol
+   - miscellaneous bug fixes
+
+  March 24, 1999
+  Brad Black
+   - initial web page design
+
+  April 1, 1999
+  Brad Black
+  Denis McLaughlin
+  v1.03b
+   - Software announce and release
